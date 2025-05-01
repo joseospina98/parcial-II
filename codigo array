@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static string[] InvertirArray(string[] arr)
+    {
+        
+        string[] arrayInvertido = new string[arr.Length];
+
+        
+        for (int i = 0; i < arr.Length; i++)
+        {
+            arrayInvertido[i] = arr[arr.Length - 1 - i];
+        }
+
+        return arrayInvertido;
+    }
+
+    static void Main()
+    {
+        
+        Console.Write("Ingrese la cantidad de elementos del array: ");
+        int n = int.Parse(Console.ReadLine());
+
+        
+        string[] arrayOriginal = new string[n];
+
+        
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Ingrese el elemento {i + 1}: ");
+            arrayOriginal[i] = Console.ReadLine();
+        }
+
+        
+        string[] arrayInvertido = InvertirArray(arrayOriginal);
+
+        // Mostrar los resultados
+        Console.WriteLine("\nArray original: [" + string.Join(", ", arrayOriginal) + "]");
+        Console.WriteLine("Array invertido: [" + string.Join(", ", arrayInvertido) + "]");
+
+        
+        Console.WriteLine("\nPresione cualquier tecla para salir...");
+        Console.ReadKey();
+    }
+}
